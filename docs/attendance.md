@@ -132,7 +132,8 @@ curl -X GET http://localhost:8000/v1/attendance/11/AT?date=1202335200 \
 
 ### **Description**
 
-This endpoint update attendance.
+This endpoint update attendance. 
+Sends student IDs and their present statuses for updating.
 
 ### **Endpoint Details**
 
@@ -147,9 +148,16 @@ This endpoint update attendance.
 ### **Request Payload**
 
 ```json
-{
-  "presentStudents": [123, 124]
-}
+[
+  {
+    "userID": "fado-cdef-4012-8345-6789abcd0123",
+    "isPresent": true,
+  },
+  {
+    "userID": "yk9a7b8c-d0e1-4f23-8a9b-c5d6e7f80123",
+    "isPresent": false,
+  }  
+]
 ```
 
 ### **Response**
