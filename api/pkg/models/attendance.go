@@ -34,6 +34,11 @@ type ReqAddAttendance struct {
 	IsPresent bool   `json:"isPresent"`
 }
 
+type ReqUpdateAttendance struct {
+	UserID    string `json:"userID"`
+	IsPresent bool   `json:"isPresent"`
+}
+
 // Response Models
 
 type ResGetAttendance struct {

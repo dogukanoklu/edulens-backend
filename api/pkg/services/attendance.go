@@ -20,3 +20,7 @@ func (s *AttendanceService) AddAttendance(classID string, attendances []models.R
 func (s *AttendanceService) GetAttendanceWithStudents(classID string, date int64) (*models.ResGetAttendance, error) {
 	return s.repo.GetAttendanceWithStudents(classID, date)
 }
+
+func (s *AttendanceService) UpdateAttendance(attendanceID string, updateAttendance []models.ReqUpdateAttendance) error {
+	return s.repo.UpdateAttendance(attendanceID, updateAttendance)
+}

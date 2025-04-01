@@ -51,3 +51,24 @@ func GetAttendanceWithStudents(c *fiber.Ctx) error {
 
 	return utils.JSONResponse(c, fiber.StatusOK, attendances)
 }
+
+func UpdateAttendance(c *fiber.Ctx) error {
+	attendanceID := c.Params("attendanceID")
+
+	var req []models.ReqUpdateAttendance
+
+	if err := utils.ParseAndValidate(c, &req); err != nil {
+		return utils.JSONError(c, fiber.StatusBadRequest, "Invalid request payload.")
+	}
+
+	db := database.GetDB()
+	attendanceRepo := repository.NewGormAttendanceRepository(db)
+	attendanceService := services.NewAttendanceService(attendanceRepo)
+
+	if err := attendanceService.UpdateAttendance(attendanceID, req); err != nil {
+		utils.JSONError(c, fiber.StatusInternalServerError, "Failed to update attendance.")
+	}
+	
+
+	return utils.JSONResponse(c, fiber.StatusNoContent, "")
+}

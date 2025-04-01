@@ -11,6 +11,7 @@ import (
 type AttendanceRepository interface {
 	AddAttendance(classID string, attendances []models.ReqAddAttendance) error
 	GetAttendanceWithStudents(classID string, date int64) (*models.ResGetAttendance, error)
+	UpdateAttendance(attendanceID string, updateAttendance []models.ReqUpdateAttendance) error
 }
 
 type GormAttendanceRepository struct {
@@ -87,4 +88,18 @@ func (r *GormAttendanceRepository) GetAttendanceWithStudents(classID string, dat
 	}
 
 	return &attendance, nil
+}
+
+func (r *GormAttendanceRepository) UpdateAttendance(attendanceID string, updateAttendance []models.ReqUpdateAttendance) (error) {
+	db := r.db
+
+	for _, update := range updateAttendance {
+		if err := db.Model(&models.AttendanceDetails{}).
+		Where("attendance_id = ? AND user_id = ?", attendanceID, update.UserID).
+		Update("is_present", update.IsPresent).Error; err != nil {
+			return err
+		}
+	}
+
+	return nil
 }
