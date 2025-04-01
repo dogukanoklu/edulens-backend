@@ -46,9 +46,10 @@ The API is organized into logical groups to facilitate user and organization man
 
 Here’s the table with a bulleted list in the right column:
 
-| **Endpoints**         | **Operations**                                                                                                              |
-| --------------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| **attendance**        | • Create<br>• Get<br>• Update                                                                                               |
+| **Endpoints**  | **Operations**                |
+| -------------- | ------------------------------|
+| **attendance** | • Create<br>• Get<br>• Update |
+| **class**      | • Create                      |
 
 ---
 
