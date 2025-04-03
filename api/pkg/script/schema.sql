@@ -21,7 +21,7 @@ DELIMITER ;
 CREATE TABLE students (
     id CHAR(36) PRIMARY KEY,
     class_id CHAR(36) NOT NULL,
-    profile_picture VARCHAR(255),
+    student_image VARCHAR(255),
     school_number BIGINT NOT NULL UNIQUE,
     first_name VARCHAR(255) NOT NULL,
     last_name VARCHAR(255) NOT NULL,

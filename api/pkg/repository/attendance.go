@@ -77,7 +77,7 @@ func (r *GormAttendanceRepository) GetAttendanceWithStudents(classID string, dat
 
 	// Additional logic to fetch the students' details for the given date
 	err = db.Table("students").
-		Select("students.id, students.profile_picture, students.school_number, students.first_name, students.last_name, attendance_details.is_present").
+		Select("students.id, students.student_image, students.school_number, students.first_name, students.last_name, attendance_details.is_present").
 		Joins("inner join attendance_details on students.id = attendance_details.user_id").
 		Joins("inner join attendances on attendance_details.attendance_id = attendances.id").
 		Where("attendances.class_id = ? AND DATE(FROM_UNIXTIME(attendances.created_at)) = DATE(FROM_UNIXTIME(?))", classID, date).

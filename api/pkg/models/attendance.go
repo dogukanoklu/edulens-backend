@@ -5,13 +5,13 @@ import "gorm.io/gorm"
 // Database Models
 
 type Student struct {
-	ID             string `json:"id"`
-	ClassID        int64  `json:"classID"`
-	ProfilePicture string `json:"profilePicture"`
-	SchoolNumber   int64  `json:"schoolNumber"`
-	FirstName      string `json:"firstName"`
-	LastName       string `json:"lastName"`
-	CreatedAt      int    `json:"createdAt"`
+	ID           string `json:"id"`
+	ClassID      int64  `json:"classID"`
+	StudentImage string `json:"studentImage"`
+	SchoolNumber int64  `json:"schoolNumber"`
+	FirstName    string `json:"firstName"`
+	LastName     string `json:"lastName"`
+	CreatedAt    int    `json:"createdAt"`
 }
 
 type Attendance struct {
@@ -51,14 +51,14 @@ type ResGetAttendance struct {
 
 type ResStudent struct {
 	ID             string `json:"id"`
-	ProfilePicture string `json:"profilePicture"`
+	StudentImage string `json:"studentImage"`
 	SchoolNumber   int64  `json:"schoolNumber"`
 	FirstName      string `json:"firstName"`
 	LastName       string `json:"lastName"`
 }
 
 func (student *ResStudent) AfterFind(tx *gorm.DB) (err error) {
-	student.ProfilePicture = "http://localhost:8000/images/" + student.ProfilePicture
+	student.StudentImage = "http://localhost:8000/images/" + student.StudentImage
 	return nil
 }
 

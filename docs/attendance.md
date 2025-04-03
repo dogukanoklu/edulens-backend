@@ -96,7 +96,7 @@ This endpoint get attendance.
   "students": [
   {
     "id": "fado-cdef-4012-8345-6789abcd0123",
-    "profilePicture": "http://localhost:8000/image/1",
+    "studentImage": "http://localhost:8000/image/1",
     "schollNumber": 100,
     "firstName": "Doğukan",
     "lastName": "OKLU",
@@ -104,7 +104,7 @@ This endpoint get attendance.
   },
   {
     "id": "yk9a7b8c-d0e1-4f23-8a9b-c5d6e7f80123",
-    "profilePicture": "http://localhost:8000/image/2",
+    "studentImage": "http://localhost:8000/image/2",
     "schollNumber": 101,
     "firstName": "Yiğit",
     "lastName": "Gülmez",
