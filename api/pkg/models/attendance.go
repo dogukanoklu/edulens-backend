@@ -47,11 +47,19 @@ type ResGetAttendance struct {
 }
 
 type ResStudent struct {
+<<<<<<< HEAD
 	ID           string `json:"id"`
 	StudentImage string `json:"studentImage"`
 	SchoolNumber int64  `json:"schoolNumber"`
 	FirstName    string `json:"firstName"`
 	LastName     string `json:"lastName"`
+=======
+	ID             string `json:"id"`
+	StudentImage string `json:"studentImage"`
+	SchoolNumber   int64  `json:"schoolNumber"`
+	FirstName      string `json:"firstName"`
+	LastName       string `json:"lastName"`
+>>>>>>> 0ad2f7cd5d8e00c3deb2064cc3a8e31d939b9f66
 }
 
 func (student *ResStudent) AfterFind(tx *gorm.DB) (err error) {
