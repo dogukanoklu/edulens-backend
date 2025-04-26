@@ -3,7 +3,6 @@ package models
 import "gorm.io/gorm"
 
 // Database Models
-
 type Student struct {
 	ID           string `json:"id"`
 	ClassID      int64  `json:"classID"`
@@ -15,32 +14,30 @@ type Student struct {
 }
 
 type Attendance struct {
-	ID        uint   `gorm:"primaryKey;autoIncrement" json:"id"` // Eğer ID auto-increment integer ise
+	ID        uint   `gorm:"primaryKey;autoIncrement" json:"id"`
 	ClassID   string `json:"classID"`
-	CreatedAt int64  `gorm:"autoCreateTime" json:"createdAt"` // GORM otomatik oluşturur
+	CreatedAt int64  `gorm:"autoCreateTime" json:"createdAt"`
 }
 
 type AttendanceDetails struct {
 	ID           string `json:"id"`
 	AttendanceID string `json:"attendanceID"`
-	UserID       string `json:"userID"`
+	StudentID    string `json:"studentID"`
 	IsPresent    bool   `json:"isPresent"`
 }
 
 // Request Models
-
 type ReqAddAttendance struct {
-	UserID    string `json:"userID"`
+	StudentID string `json:"studentID"`
 	IsPresent bool   `json:"isPresent"`
 }
 
 type ReqUpdateAttendance struct {
-	UserID    string `json:"userID"`
+	StudentID string `json:"studentID"`
 	IsPresent bool   `json:"isPresent"`
 }
 
 // Response Models
-
 type ResGetAttendance struct {
 	ID        string       `json:"id"`
 	Level     int          `json:"level"`
@@ -50,11 +47,11 @@ type ResGetAttendance struct {
 }
 
 type ResStudent struct {
-	ID             string `json:"id"`
+	ID           string `json:"id"`
 	StudentImage string `json:"studentImage"`
-	SchoolNumber   int64  `json:"schoolNumber"`
-	FirstName      string `json:"firstName"`
-	LastName       string `json:"lastName"`
+	SchoolNumber int64  `json:"schoolNumber"`
+	FirstName    string `json:"firstName"`
+	LastName     string `json:"lastName"`
 }
 
 func (student *ResStudent) AfterFind(tx *gorm.DB) (err error) {
@@ -63,7 +60,6 @@ func (student *ResStudent) AfterFind(tx *gorm.DB) (err error) {
 }
 
 // Database Add
-
 type AddAttendances struct {
 	ID          string `gorm:"primaryKey;autoIncrement"`
 	Attendances []ReqAddAttendance

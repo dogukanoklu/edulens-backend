@@ -43,7 +43,7 @@ func (r *GormAttendanceRepository) AddAttendance(classID string, attendances []m
 	for _, record := range attendances {
 		valueStrings = append(valueStrings, "(?, ?, ?)")
 		valueArgs = append(valueArgs, attendanceID)
-		valueArgs = append(valueArgs, record.UserID)
+		valueArgs = append(valueArgs, record.StudentID)
 		valueArgs = append(valueArgs, record.IsPresent)
 	}
 
@@ -95,7 +95,7 @@ func (r *GormAttendanceRepository) UpdateAttendance(attendanceID string, updateA
 
 	for _, update := range updateAttendance {
 		if err := db.Model(&models.AttendanceDetails{}).
-		Where("attendance_id = ? AND user_id = ?", attendanceID, update.UserID).
+		Where("attendance_id = ? AND user_id = ?", attendanceID, update.StudentID).
 		Update("is_present", update.IsPresent).Error; err != nil {
 			return err
 		}

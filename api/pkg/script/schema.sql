@@ -68,10 +68,10 @@ ADD UNIQUE INDEX idx_class_date (class_id, (DATE(FROM_UNIXTIME(created_at))));
 CREATE TABLE attendance_details (
     id CHAR(36) PRIMARY KEY,
     attendance_id CHAR(36) NOT NULL,
-    user_id CHAR(36) NOT NULL,
+    student_id CHAR(36) NOT NULL,
     is_present BOOLEAN NOT NULL,
     FOREIGN KEY (attendance_id) REFERENCES attendances(id),
-    FOREIGN KEY (user_id) REFERENCES students(id)
+    FOREIGN KEY (student_id) REFERENCES students(id)
 );
 
 DELIMITER //

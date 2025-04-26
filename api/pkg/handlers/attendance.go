@@ -33,7 +33,7 @@ func AddAttendance(c *fiber.Ctx) error {
 }
 
 func GetAttendanceWithStudents(c *fiber.Ctx) error {
-	classID := c.Params("level")
+	classID := c.Params("classID")
 
 	date, err := utils.ParseDateQuery(c)
 	if err != nil {

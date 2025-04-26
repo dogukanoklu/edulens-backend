@@ -37,8 +37,8 @@ func setupAddAttendanceTest(tb testing.TB) (*MockAttendanceRepository, *services
 	mockRepo := new(MockAttendanceRepository)
 	classID := "196d3e7e-0e59-11f0-9064-c85b764bb385"
 	attendances := []models.ReqAddAttendance{
-		{UserID: "f7fe49f3-0e59-11f0-9064-c85b764bb385", IsPresent: true},
-		{UserID: "f7fb5ea7-0e59-11f0-9064-c85b764bb385", IsPresent: false},
+		{StudentID: "f7fe49f3-0e59-11f0-9064-c85b764bb385", IsPresent: true},
+		{StudentID: "f7fb5ea7-0e59-11f0-9064-c85b764bb385", IsPresent: false},
 	}
 	attendanceService := services.NewAttendanceService(mockRepo)
 	return mockRepo, attendanceService, classID, attendances
@@ -58,8 +58,8 @@ func setupUpdateAttendance(tb testing.TB) (*MockAttendanceRepository, *services.
 	mockRepo := new(MockAttendanceRepository)
 	attendanceID := "15cae64a-0e5a-11f0-9064-c85b764bb385"
 	updateAttendance := []models.ReqUpdateAttendance{
-		{UserID: "f7fe49f3-0e59-11f0-9064-c85b764bb385", IsPresent: true},
-		{UserID: "f7fb5ea7-0e59-11f0-9064-c85b764bb385", IsPresent: false},
+		{StudentID: "f7fe49f3-0e59-11f0-9064-c85b764bb385", IsPresent: true},
+		{StudentID: "f7fb5ea7-0e59-11f0-9064-c85b764bb385", IsPresent: false},
 	}
 	attendanceService := services.NewAttendanceService(mockRepo)
 	return mockRepo, attendanceService, attendanceID, updateAttendance
