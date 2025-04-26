@@ -28,11 +28,11 @@ Only students who are present are sent.
 ```json
 [
   {
-    "userID": "fado-cdef-4012-8345-6789abcd0123",
+    "studentID": "fado-cdef-4012-8345-6789abcd0123",
     "isPresent": true,
   },
   {
-    "userID": "yk9a7b8c-d0e1-4f23-8a9b-c5d6e7f80123",
+    "studentID": "yk9a7b8c-d0e1-4f23-8a9b-c5d6e7f80123",
     "isPresent": false,
   }  
 ]
@@ -76,7 +76,7 @@ This endpoint get attendance.
 ### **Endpoint Details**
 
 - **Method:** `GET`
-- **Path:** `/attendance/v1/{classID}?date=1202335200`
+- **Path:** `/v1/attendance/{classID}?date=1202335200`
 - **Headers:**
   - `Authorization: Bearer <token>` (Required)
 
@@ -150,11 +150,11 @@ Sends student IDs and their present statuses for updating.
 ```json
 [
   {
-    "userID": "fado-cdef-4012-8345-6789abcd0123",
+    "studentID": "fado-cdef-4012-8345-6789abcd0123",
     "isPresent": true,
   },
   {
-    "userID": "yk9a7b8c-d0e1-4f23-8a9b-c5d6e7f80123",
+    "studentID": "yk9a7b8c-d0e1-4f23-8a9b-c5d6e7f80123",
     "isPresent": false,
   }  
 ]
