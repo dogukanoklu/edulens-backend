@@ -52,7 +52,7 @@ Only students who are present are sent.
 ### **cURL Example**
 
 ```bash
-curl -X POST http://localhost:8000/v1/attendance/11/AT \
+curl -X POST http://localhost:8000/v1/attendance/{classID} \
 -H "Authorization: Bearer <token>" \
 -H "Content-Type: application/json" \
 -d '[
@@ -124,7 +124,7 @@ This endpoint get attendance.
 ### **cURL Example**
 
 ```bash
-curl -X GET http://localhost:8000/v1/attendance/11/AT?date=1202335200 \
+curl -X GET http://localhost:8000/v1/attendance/{classID}?date=1202335200 \
 -H "Authorization: Bearer <token>" \
 ```
 

@@ -37,7 +37,6 @@ This API enables seamless integration with your applications to manage users and
 - **Token-Based Authentication:**
   All endpoints require a valid JWT token passed in the Authorization header as a Bearer token. Tokens include claims that the API uses to verify the identity and permissions of the user.
 
-
 ---
 
 ### **API Endpoint Overview**
@@ -47,9 +46,9 @@ The API is organized into logical groups to facilitate user and organization man
 Here’s the table with a bulleted list in the right column:
 
 | **Endpoints**  | **Operations**                |
-| -------------- | ------------------------------|
+| -------------- | ----------------------------- |
 | **attendance** | • Create<br>• Get<br>• Update |
-| **class**      | • Create                      |
+| **class**      | • Get                         |
 
 ---
 
