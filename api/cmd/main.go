@@ -1,10 +1,10 @@
 package main
 
 import (
+	"api/pkg/database"
 	"api/pkg/log"
 	"api/pkg/middleware"
 	"api/pkg/router"
-	"api/pkg/database"
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/joho/godotenv"
@@ -19,7 +19,7 @@ func main() {
 	database.InitDB()
 
 	app := fiber.New()
-	app.Use(middleware.APIAuthMiddleware)
+	app.Use(middleware.CorsMiddleware)
 	router.Router(app)
 
 	log.Info("Server listenin on http://localhost:8000 :)")

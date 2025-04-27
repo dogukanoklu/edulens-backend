@@ -52,6 +52,7 @@ type ResStudent struct {
 	SchoolNumber int64  `json:"schoolNumber"`
 	FirstName    string `json:"firstName"`
 	LastName     string `json:"lastName"`
+	IsPresent    bool   `json:"isPresent"`
 }
 
 func (student *ResStudent) AfterFind(tx *gorm.DB) (err error) {

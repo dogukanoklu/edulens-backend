@@ -4,7 +4,7 @@ package models
 
 type Class struct {
 	ID string `json:"id"`
-	Level string `json:"level"`
+	Level int64 `json:"level"`
 	Branch string `json:"branch"`
 }
 
@@ -12,6 +12,6 @@ type Class struct {
 
 type ResClasses struct {
 	ID string `json:"id"`
-	Level string `json:"level"`
+	Level int64 `json:"level"`
 	Branch string `json:"branch"`
 }

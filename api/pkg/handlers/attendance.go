@@ -16,7 +16,7 @@ func AddAttendance(c *fiber.Ctx) error {
 	var req []models.ReqAddAttendance
 
 	if err := utils.ParseAndValidate(c, &req); err != nil {
-		return utils.JSONError(c, fiber.StatusBadRequest, "Invalid request payload.") 
+		return utils.JSONError(c, fiber.StatusBadRequest, "Invalid request payload.")
 	}
 
 	db := database.GetDB()
@@ -49,6 +49,10 @@ func GetAttendanceWithStudents(c *fiber.Ctx) error {
 		return utils.JSONError(c, fiber.StatusInternalServerError, "Failed to retrieve attendance information.")
 	}
 
+	if len(attendances.Students) == 0 {
+		return utils.JSONError(c, fiber.StatusNotFound, "The requested attendance data could not be found for the specified parameters.")
+	}
+
 	return utils.JSONResponse(c, fiber.StatusOK, attendances)
 }
 
@@ -66,9 +70,8 @@ func UpdateAttendance(c *fiber.Ctx) error {
 	attendanceService := services.NewAttendanceService(attendanceRepo)
 
 	if err := attendanceService.UpdateAttendance(attendanceID, req); err != nil {
-		utils.JSONError(c, fiber.StatusInternalServerError, "Failed to update attendance.")
+		return utils.JSONError(c, fiber.StatusInternalServerError, "Failed to update attendance.")
 	}
-	
 
 	return utils.JSONResponse(c, fiber.StatusNoContent, "")
 }
