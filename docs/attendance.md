@@ -97,7 +97,7 @@ This endpoint get attendance.
   {
     "id": "fado-cdef-4012-8345-6789abcd0123",
     "studentImage": "http://localhost:8000/image/1",
-    "schollNumber": 100,
+    "schoolNumber": 100,
     "firstName": "Doğukan",
     "lastName": "OKLU",
     "isPresent": true
@@ -105,7 +105,7 @@ This endpoint get attendance.
   {
     "id": "yk9a7b8c-d0e1-4f23-8a9b-c5d6e7f80123",
     "studentImage": "http://localhost:8000/image/2",
-    "schollNumber": 101,
+    "schoolNumber": 101,
     "firstName": "Yiğit",
     "lastName": "Gülmez",
     "isPresent": false
