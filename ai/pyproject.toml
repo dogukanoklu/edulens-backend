@@ -1,0 +1,27 @@
+[project]
+name = "ai"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "dogukanoklu",email = "dogukanoklu57@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "dlib (>=19.24.9,<20.0.0)",
+    "face-recognition (>=1.3.0,<2.0.0)",
+    "face-recognition-models @ git+https://github.com/ageitgey/face_recognition_models",
+    "opencv-python (>=4.11.0.86,<5.0.0.0)",
+    "pillow (>=11.2.1,<12.0.0)",
+    "numpy (>=2.2.6,<3.0.0)",
+    "mysql-connector-python (>=9.3.0,<10.0.0)",
+    "fastapi (>=0.115.12,<0.116.0)",
+    "uvicorn (>=0.34.2,<0.35.0)",
+    "python-multipart (>=0.0.20,<0.0.21)",
+    "python-dotenv (>=1.1.0,<2.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
