@@ -1,9 +1,7 @@
-<p align="center">
-  <img src="assets/logos/EduLensLogoNonBG.png" alt="EduLens Logo" height="250" style="display: block; margin-bottom: -160px;" />
-  <img src="assets/logos/EduLensTextNonBG.png" alt="EduLens Text" height="300" style="display: block; margin-bottom: -80px;" />
-</p>
+<div align="center"><img alt="Logo"  src="assets/logos/EduLensLogoText.png" height="300"/></div> 
 
-# Tübitak 4006 B Project EduLens Backend
+<h1 align="center"> Tübitak 4006 B Project EduLens Backend </h1>
+
 
 This repository contains the backend code for the EduLens project, funded by Tübitak 4006 B.
 
